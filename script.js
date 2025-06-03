@@ -189,6 +189,239 @@ function smoothScrollTo(elementId) {
 }
 
 /* ====================================
+   FUNCIONES PARA GENERAR PDF
+   ==================================== */
+
+/**
+ * Descarga el CV en formato PDF
+ */
+function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    generatePDFContent(doc);
+    
+    // Descargar el archivo
+    doc.save('Jose_Enrique_Gudino_CV.pdf');
+    showNotification('CV descargado exitosamente');
+}
+
+/**
+ * Abre el diálogo de impresión del PDF
+ */
+function printPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    generatePDFContent(doc);
+    
+    // Abrir en una nueva ventana para imprimir
+    const pdfBlob = doc.output('blob');
+    const pdfUrl = URL.createObjectURL(pdfBlob);
+    const printWindow = window.open(pdfUrl);
+    
+    printWindow.onload = function() {
+        printWindow.print();
+    };
+    
+    showNotification('Abriendo ventana de impresión...');
+}
+
+/**
+ * Genera el contenido del PDF con el formato del CV
+ * @param {jsPDF} doc - Instancia de jsPDF
+ */
+function generatePDFContent(doc) {
+    const margin = 20;
+    let yPosition = margin;
+    
+    // Configurar fuentes y colores
+    doc.setFontSize(24);
+    doc.setTextColor(139, 69, 19); // Color café
+    doc.setFont(undefined, 'bold');
+    
+    // Encabezado
+    doc.text('JOSE ENRIQUE GUDIÑO', margin, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(16);
+    doc.setFont(undefined, 'normal');
+    doc.text('Desarrollador de Software Full-Stack', margin, yPosition);
+    yPosition += 15;
+    
+    // Información de contacto
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    doc.text('📞 (+52) 686 460 2677', margin, yPosition);
+    yPosition += 6;
+    doc.text('📧 catrin0110001@gmail.com', margin, yPosition);
+    yPosition += 6;
+    doc.text('📍 Mexicali, B.C.', margin, yPosition);
+    yPosition += 15;
+    
+    // Disponibilidad
+    doc.setFontSize(14);
+    doc.setTextColor(255, 127, 0);
+    doc.setFont(undefined, 'bold');
+    doc.text('🚀 DISPONIBLE PARA PROYECTOS INMEDIATOS', margin, yPosition);
+    yPosition += 15;
+    
+    // Stack Tecnológico
+    doc.setFontSize(16);
+    doc.setTextColor(139, 69, 19);
+    doc.text('STACK TECNOLÓGICO', margin, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    doc.setFont(undefined, 'normal');
+    const techStack = 'Java • JavaScript • C# • Python • PHP • SQL • Unity • HTML/CSS';
+    doc.text(techStack, margin, yPosition);
+    yPosition += 15;
+    
+    // Experiencia Profesional
+    doc.setFontSize(16);
+    doc.setTextColor(139, 69, 19);
+    doc.setFont(undefined, 'bold');
+    doc.text('EXPERIENCIA PROFESIONAL', margin, yPosition);
+    yPosition += 10;
+    
+    // Experiencia 1
+    doc.setFontSize(12);
+    doc.setTextColor(210, 105, 30);
+    doc.setFont(undefined, 'bold');
+    doc.text('Administrador de Base de Datos y Sitio Web', margin, yPosition);
+    yPosition += 6;
+    
+    doc.setTextColor(139, 69, 19);
+    doc.setFont(undefined, 'normal');
+    doc.text('Facultad de Ciencias Administrativas, UABC – Mexicali, B.C.', margin, yPosition);
+    yPosition += 6;
+    
+    doc.setTextColor(0, 0, 0);
+    doc.setFont(undefined, 'italic');
+    doc.text('Febrero 2025 – Actualidad', margin, yPosition);
+    yPosition += 8;
+    
+    doc.setFont(undefined, 'normal');
+    const duties1 = [
+        '• Gestión integral de la base de datos académica y administrativa',
+        '• Desarrollo de sistema web para registro y control de información',
+        '• Coordinación con personal administrativo para digitalizar procesos internos'
+    ];
+    
+    duties1.forEach(duty => {
+        doc.text(duty, margin + 5, yPosition);
+        yPosition += 5;
+    });
+    yPosition += 8;
+    
+    // Verificar si necesitamos nueva página
+    if (yPosition > 250) {
+        doc.addPage();
+        yPosition = margin;
+    }
+    
+    // Experiencia 2
+    doc.setTextColor(210, 105, 30);
+    doc.setFont(undefined, 'bold');
+    doc.text('Becario en Oficina de Posgrado', margin, yPosition);
+    yPosition += 6;
+    
+    doc.setTextColor(139, 69, 19);
+    doc.setFont(undefined, 'normal');
+    doc.text('UABC – Mexicali, B.C.', margin, yPosition);
+    yPosition += 6;
+    
+    doc.setTextColor(0, 0, 0);
+    doc.setFont(undefined, 'italic');
+    doc.text('Enero 2024 – Mayo 2024', margin, yPosition);
+    yPosition += 8;
+    
+    doc.setFont(undefined, 'normal');
+    const duties2 = [
+        '• Migración de registros desde hojas de cálculo a bases de datos SQL',
+        '• Desarrollo de una interfaz gráfica para CRUD de datos',
+        '• Optimización del acceso a la información mediante estructura relacional'
+    ];
+    
+    duties2.forEach(duty => {
+        doc.text(duty, margin + 5, yPosition);
+        yPosition += 5;
+    });
+    yPosition += 8;
+    
+    // Experiencia 3
+    doc.setTextColor(210, 105, 30);
+    doc.setFont(undefined, 'bold');
+    doc.text('Desarrollador Web y Diseñador de Base de Datos', margin, yPosition);
+    yPosition += 6;
+    
+    doc.setTextColor(139, 69, 19);
+    doc.setFont(undefined, 'normal');
+    doc.text('Casa Gudiño – Mexicali, B.C.', margin, yPosition);
+    yPosition += 6;
+    
+    doc.setTextColor(0, 0, 0);
+    doc.setFont(undefined, 'italic');
+    doc.text('Junio 2020 – Diciembre 2020', margin, yPosition);
+    yPosition += 8;
+    
+    doc.setFont(undefined, 'normal');
+    const duties3 = [
+        '• Diseño e implementación de una base de datos personalizada',
+        '• Desarrollo de un sitio web empresarial desde cero',
+        '• Comunicación directa con el cliente para análisis de requerimientos'
+    ];
+    
+    duties3.forEach(duty => {
+        doc.text(duty, margin + 5, yPosition);
+        yPosition += 5;
+    });
+    yPosition += 15;
+    
+    // Verificar si necesitamos nueva página para las habilidades
+    if (yPosition > 220) {
+        doc.addPage();
+        yPosition = margin;
+    }
+    
+    // Habilidades Técnicas
+    doc.setFontSize(16);
+    doc.setTextColor(139, 69, 19);
+    doc.setFont(undefined, 'bold');
+    doc.text('HABILIDADES TÉCNICAS', margin, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    doc.setFont(undefined, 'normal');
+    
+    const skills = [
+        'Frontend: HTML5, CSS3, JavaScript, interfaces responsivas',
+        'Backend: Java, PHP, Python, C#, arquitecturas escalables',
+        'Bases de Datos: SQL, diseño relacional, optimización',
+        'Redes: Configuración de servidores, conectividad, comandos de red',
+        'Desarrollo de Juegos: Unity, Godot (6+ proyectos completados)',
+        'Metodologías: Autodidacta, enfoque en soluciones escalables'
+    ];
+    
+    skills.forEach(skill => {
+        doc.text(`• ${skill}`, margin, yPosition);
+        yPosition += 6;
+    });
+    
+    // Pie de página
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text('GitHub: github.com/Catrin101', margin, doc.internal.pageSize.height - 10);
+}
+
+/* ====================================
+   FUNCIONES PARA MANEJO DE MODALES
+   ==================================== */
+
+/* ====================================
    FUNCIONES PARA FUTURAS EXPANSIONES
    ====================================
    Aquí puedes agregar:

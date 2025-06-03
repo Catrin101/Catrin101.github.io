@@ -353,6 +353,43 @@ body {
 }
 
 /* ====================================
+   BOTONES PDF
+   ==================================== */
+   .pdf-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pdf-btn {
+    background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(34, 139, 34, 0.3);
+}
+
+.pdf-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(34, 139, 34, 0.4);
+    background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+}
+
+.pdf-btn:active {
+    transform: translateY(0);
+}
+
+/* ====================================
+   INFORMACIÓN DE CONTACTO
+   ==================================== */
+
+/* ====================================
    SECCIÓN PARA FUTURAS EXPANSIONES
    ====================================
    Aquí puedes agregar:
