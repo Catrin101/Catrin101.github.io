@@ -46,64 +46,53 @@ function renderContact() {
 }
 
 function renderModals() {
-    // Renderizar contenido tanto en modales como en tarjetas desktop
-    const experienceContent = generateExperienceContent();
-    const fullStackContent = generateFullStackContent();
-    const resultsContent = generateResultsContent();
+    renderExperienceModal();
+    renderFullStackModal();
+    renderResultsModal();
+}
 
-    // Para modales
-    document.querySelector('#experienceModal .modal-content').innerHTML = `
+function renderExperienceModal() {
+    const container = document.querySelector('#experienceModal .modal-content');
+    container.innerHTML = `
         <span class="close" onclick="closeModal('experienceModal')">&times;</span>
         <h2 class="modal-title">💼 Experiencia Profesional</h2>
-        ${experienceContent}
+        ${portfolioData.experience.map(exp => `
+            <div class="experience-item">
+                <div class="experience-title">${exp.title}</div>
+                <div class="experience-company">${exp.company}</div>
+                <div class="experience-date">${exp.date}</div>
+                <ul class="experience-duties">
+                    ${exp.duties.map(duty => `<li>${duty}</li>`).join('')}
+                </ul>
+            </div>
+        `).join('')}
     `;
+}
 
-    document.querySelector('#fullStackModal .modal-content').innerHTML = `
+function renderFullStackModal() {
+    const container = document.querySelector('#fullStackModal .modal-content');
+    container.innerHTML = `
         <span class="close" onclick="closeModal('fullStackModal')">&times;</span>
-        <h2 class="modal-title">🌐 Desarrollador Full-Stack</h2>
-        ${fullStackContent}
+        <h2 class="modal-title">${portfolioData.fullStack.title}</h2>
+        <p style="color: #8b4513; text-align: center; font-size: 1.1em; line-height: 1.6;">
+            ${portfolioData.fullStack.skills.map(skill => `
+                <strong>${skill.area}:</strong> ${skill.details}<br><br>
+            `).join('')}
+        </p>
     `;
+}
 
-    document.querySelector('#resultsModal .modal-content').innerHTML = `
+function renderResultsModal() {
+    const container = document.querySelector('#resultsModal .modal-content');
+    container.innerHTML = `
         <span class="close" onclick="closeModal('resultsModal')">&times;</span>
-        <h2 class="modal-title">⚡ Resultados Rápidos</h2>
-        ${resultsContent}
+        <h2 class="modal-title">${portfolioData.results.title}</h2>
+        <p style="color: #8b4513; text-align: center; font-size: 1.1em; line-height: 1.6;">
+            ${portfolioData.results.points.map(point => `
+                <strong>${point.title}:</strong> ${point.details}<br><br>
+            `).join('')}
+        </p>
     `;
-
-    // Para tarjetas desktop
-    document.querySelector('#experienceCard .card-content').innerHTML = experienceContent;
-    document.querySelector('#fullStackCard .card-content').innerHTML = fullStackContent;
-    document.querySelector('#resultsCard .card-content').innerHTML = resultsContent;
-}
-
-// Funciones auxiliares para generar contenido
-function generateExperienceContent() {
-    return portfolioData.experience.map(exp => `
-        <div class="experience-item">
-            <div class="experience-title">${exp.title}</div>
-            <div class="experience-company">${exp.company}</div>
-            <div class="experience-date">${exp.date}</div>
-            <ul class="experience-duties">
-                ${exp.duties.map(duty => `<li>${duty}</li>`).join('')}
-            </ul>
-        </div>
-    `).join('');
-}
-
-function generateFullStackContent() {
-    return `<p style="color: #8b4513; text-align: center; font-size: 1.1em; line-height: 1.6;">
-        ${portfolioData.fullStack.skills.map(skill => `
-            <strong>${skill.area}:</strong> ${skill.details}<br><br>
-        `).join('')}
-    </p>`;
-}
-
-function generateResultsContent() {
-    return `<p style="color: #8b4513; text-align: center; font-size: 1.1em; line-height: 1.6;">
-        ${portfolioData.results.points.map(point => `
-            <strong>${point.title}:</strong> ${point.details}<br><br>
-        `).join('')}
-    </p>`;
 }
 
 export function initializeContent() {

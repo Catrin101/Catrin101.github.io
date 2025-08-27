@@ -56,24 +56,135 @@ body {
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     padding: 20px;
-    background-color: #f9f9f9;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border-left: 5px solid #d2691e;
+    box-shadow: 0 5px 15px rgba(210, 105, 30, 0.1);
 }
 
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.info-card-title {
-    margin-top: 0;
+.experience-title {
+    color: #d2691e;
     font-size: 1.2em;
-    color: #333;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
-/* Media Query para pantallas más grandes (Desktop > 768px) */
-@media (min-width: 768px) {
-    .info-container {
-        flex-direction: row; /* Lado a lado en desktop */
+.experience-company {
+    color: #8b4513;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.experience-date {
+    color: #a0522d;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.experience-duties {
+    color: #333;
+    line-height: 1.6;
+}
+
+.experience-duties li {
+    margin-bottom: 8px;
+}
+
+/* ====================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ==================================== */
+@media (max-width: 768px) {
+    .card {
+        padding: 30px 20px;
+    }
+    
+    .name {
+        font-size: 2em;
+    }
+    
+    .advantages {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+        width: 95%;
     }
 }
+
+/* Nuevo estilo para contenedor de tarjetas en desktop */
+.desktop-cards {
+    display: none; /* Por defecto oculto */
+}
+
+/* Media query para escritorio (> 1024px) */
+@media (min-width: 1024px) {
+    .card {
+        max-width: 1200px;
+    }
+
+    /* Ocultar botones que abren modales en desktop */
+    .advantage[data-modal-target] {
+        display: none;
+    }
+
+    /* Mostrar contenedor de tarjetas */
+    .desktop-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+    }
+
+    .info-card {
+        background: linear-gradient(135deg, #fff8dc, #fffaf0);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
+        transition: transform 0.3s ease;
+    }
+
+    .info-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .info-card-title {
+        color: #8b4513;
+        font-size: 1.8em;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Ocultar modales en desktop */
+    .modal {
+        display: none !important;
+    }
+}
+
+/* Media query para móvil (< 1024px) */
+@media (max-width: 1023px) {
+    .desktop-cards {
+        display: none;
+    }
+}
+
+/* ====================================
+   SECCIÓN PARA FUTURAS EXPANSIONES
+   ====================================
+   Aquí puedes agregar:
+   - Nuevas secciones de contenido
+   - Animaciones personalizadas
+   - Temas alternativos (dark mode)
+   - Efectos de parallax
+   - Animaciones de scroll
+   - Gradientes adicionales
+   - Efectos de glass morphism
+   ==================================== */
