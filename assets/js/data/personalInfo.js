@@ -8,9 +8,8 @@ const personalInfo = {
     phone: "(+52) 686 460 2677",
     portfolio: "#",
     social: {
-        github: "https://github.com/tu-usuario",
-        linkedin: "https://linkedin.com/in/tu-perfil",
-        twitter: "https://twitter.com/tu-usuario",
+        github: "https://github.com/Catrin101",
+        linkedin: "https://www.linkedin.com/in/jose-enrique-gudiño-gomez-46904b20b",
         email: "mailto:catrin0110001@gmail.com"
     },
     education: "Licenciatura en Sistemas Computacionales - UABC"
