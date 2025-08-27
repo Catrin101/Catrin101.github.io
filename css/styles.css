@@ -352,6 +352,63 @@ body {
     }
 }
 
+/* Nuevo estilo para contenedor de tarjetas en desktop */
+.desktop-cards {
+    display: none; /* Por defecto oculto */
+}
+
+/* Media query para escritorio (> 1024px) */
+@media (min-width: 1024px) {
+    .card {
+        max-width: 1200px;
+    }
+
+    /* Ocultar botones que abren modales en desktop */
+    .advantage[data-modal-target] {
+        display: none;
+    }
+
+    /* Mostrar contenedor de tarjetas */
+    .desktop-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+    }
+
+    .info-card {
+        background: linear-gradient(135deg, #fff8dc, #fffaf0);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
+        transition: transform 0.3s ease;
+    }
+
+    .info-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .info-card-title {
+        color: #8b4513;
+        font-size: 1.8em;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Ocultar modales en desktop */
+    .modal {
+        display: none !important;
+    }
+}
+
+/* Media query para móvil (< 1024px) */
+@media (max-width: 1023px) {
+    .desktop-cards {
+        display: none;
+    }
+}
+
 /* ====================================
    SECCIÓN PARA FUTURAS EXPANSIONES
    ====================================
