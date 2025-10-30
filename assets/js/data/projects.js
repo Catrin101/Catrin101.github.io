@@ -1,10 +1,19 @@
 const projects = [
     {
+        title: "SkyClick",
+        description: "Un juego 2D de anvientacion de fantasia, donde el jugador tiene que construir una siudad en una isla flotante",
+        technologies: ["Godot Engine", "GDScript", "Game Design"],
+        image: "/assets/img/Portada SkyClick.png",
+        github: "https://github.com/Catrin101/Clicker_builder",
+        demo: "https://catrin-101.itch.io/skyclick",
+        featured: true
+    },
+    {
         title: "Sistema Web Empresarial",
         description: "Desarrollo completo de un sistema web con PHP, incluyendo base de datos personalizada y hosting en producción para uso empresarial.",
         technologies: ["PHP", "SQL", "HTML", "CSS", "JavaScript"],
-        image: "fas fa-briefcase",
-        github: "#",
+        image: "/assets/img/getck.png",
+        github: "https://github.com/Catrin101/Sistema_GTek_Logistics",
         demo: "#",
         featured: true
     },
@@ -13,7 +22,7 @@ const projects = [
         description: "Plataforma web para registro y control de información académica, con integración a base de datos administrativa.",
         technologies: ["PHP", "SQL", "HTML", "CSS"],
         image: "fas fa-graduation-cap",
-        github: "#",
+        github: "https://github.com/Catrin101/Pagina-Emprendedores-UABC",
         demo: "#",
         featured: true
     },
@@ -21,27 +30,18 @@ const projects = [
         title: "Interfaz CRUD de Datos",
         description: "Desarrollo de interfaz gráfica para operaciones CRUD, optimizando el acceso a información mediante estructura relacional.",
         technologies: ["SQL", "JavaScript", "HTML", "CSS"],
-        image: "fas fa-database",
-        github: "#",
+        image: "/assets/img/iem.png",
+        github: "https://github.com/RanEdy/iem-event-management-system",
         demo: "#",
         featured: false
     },
     {
-        title: "Juego de Disparos 2D",
-        description: "Videojuego desarrollado con Unity, incluyendo mecánicas de control de jugador, enemigos y sistema de puntuación.",
-        technologies: ["Unity", "C#", "Game Design"],
-        image: "fas fa-gamepad",
-        github: "#",
-        demo: "#",
-        featured: true
-    },
-    {
         title: "Juego Arcade de Autos",
         description: "Juego arcade con obstáculos, interfaz visual dinámica y sistema de detección de colisiones desarrollado en Godot.",
-        technologies: ["Godot", "GDScript", "Game Design"],
-        image: "fas fa-car",
+        technologies: ["Unity Engine", "C#", "Game Design"],
+        image: "/assets/img/7DXSYb.png",
         github: "#",
-        demo: "#",
+        demo: "https://catrin-101.itch.io/crazy-loco-car-auto",
         featured: false
     },
     {
