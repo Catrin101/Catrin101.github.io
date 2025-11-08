@@ -8,7 +8,7 @@ function initProjects() {
         projectCard.className = 'project-card';
         projectCard.innerHTML = `
             <div class="project-image">
-                <i class="${project.image}"></i>
+                ${project.image.startsWith('/assets/img/') ? `<img src="${project.image}" alt="${project.title}">` : `<i class="${project.image}"></i>`}
             </div>
             <div class="project-content">
                 <h3>${project.title}</h3>

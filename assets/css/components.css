@@ -437,13 +437,26 @@
 }
 
 .project-image {
-    height: 200px;
-    background: var(--gradient);
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes de proyecto */
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    color: white;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-image i {
+    font-size: 3em;
+    color: #d2691e;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .project-content {
