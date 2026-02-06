@@ -448,12 +448,18 @@ body {
 }
 
 .skill-tag {
-    background: rgba(232, 115, 42, 0.1);
+    background: rgba(232, 115, 42, 0.15);
     color: var(--primary-color);
     padding: 0.5rem 1rem;
     border-radius: 4px;
     font-size: 0.9rem;
-    border: 1px solid rgba(232, 115, 42, 0.3);
+    border: 1px solid rgba(232, 115, 42, 0.4);
+    transition: var(--transition);
+}
+
+.skill-tag:hover {
+    background: rgba(232, 115, 42, 0.25);
+    border-color: var(--primary-color);
 }
 
 /* Timeline */
@@ -616,6 +622,12 @@ body {
     border-bottom: 2px solid var(--border-color);
 }
 
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .project-content {
     padding: 1.5rem;
 }
@@ -642,12 +654,12 @@ body {
 }
 
 .tech-tag {
-    background: rgba(232, 115, 42, 0.1);
+    background: rgba(232, 115, 42, 0.15);
     color: var(--primary-color);
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
     font-size: 0.85rem;
-    border: 1px solid rgba(232, 115, 42, 0.3);
+    border: 1px solid rgba(232, 115, 42, 0.4);
 }
 
 .project-links {
@@ -738,6 +750,7 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(232, 115, 42, 0.1);
 }
 
 .form-group input::placeholder,
