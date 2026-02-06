@@ -1,42 +1,42 @@
 const experience = [
     {
-        title: "Desarrollador de Aplicación Web",
-        company: "Gtek Logistic. B.C.",
-        period: "Junio 25, 2025 – Julio 2, 2025",
+        title: "Desarrollador de Software",
+        company: "Casa Gudiño – Mexicali, B.C.",
+        period: "2025 – Presente",
         description: [
-            "Diseño e implementación de una base de datos personalizada",
-            "Desarrollo de un sistema web desarrollado con PHP que se subió a un host para su uso constante",
-            "Comunicación directa con el cliente para análisis de requerimientos"
+            "Diseño y desarrollo de un sistema web completo para la operación diaria del negocio",
+            "Sistema incluye registro de clientes, gestión de pedidos y control de cuentas integrado",
+            "Proyecto desarrollado de forma independiente desde análisis hasta despliegue final"
         ]
     },
     {
-        title: "Administrador de Base de Datos y Sitio Web",
+        title: "Desarrollador de Aplicación Web",
+        company: "Gtek Logistics – B.C.",
+        period: "Junio 2025 – Julio 2025",
+        description: [
+            "Desarrollo completo de sistema web empresarial en PHP con base de datos personalizada",
+            "Desplegado en hosting en producción para uso diario de la empresa",
+            "Análisis directo de requerimientos con el cliente y diseño de estructura de datos"
+        ]
+    },
+    {
+        title: "Desarrollador Web y Administrador de Base de Datos",
         company: "Facultad de Ciencias Administrativas, UABC",
         period: "Febrero 2025 – Mayo 2025",
         description: [
-            "Gestión integral de la base de datos académica y administrativa",
-            "Desarrollo de sistema web para registro y control de información",
-            "Coordinación con personal administrativo para digitalizar procesos internos"
+            "Desarrollo de sistema web para registro y control de información académica",
+            "Integración con base de datos institucional",
+            "Coordinación directa con personal administrativo para digitalizar procesos"
         ]
     },
     {
-        title: "Becario en Oficina de Posgrado",
-        company: "UABC – Mexicali, B.C.",
+        title: "Desarrollador de Software",
+        company: "UABC – Oficina de Posgrado",
         period: "Enero 2024 – Mayo 2024",
         description: [
-            "Migración de registros desde hojas de cálculo a bases de datos SQL",
-            "Desarrollo de una interfaz gráfica para CRUD de datos",
-            "Optimización del acceso a la información mediante estructura relacional"
-        ]
-    },
-    {
-        title: "Desarrollador Web y Diseñador de Base de Datos",
-        company: "Casa Gudiño – Mexicali, B.C.",
-        period: "Junio 2020 – Diciembre 2020",
-        description: [
-            "Diseño e implementación de una base de datos personalizada",
-            "Desarrollo de un sitio web empresarial desde cero",
-            "Comunicación directa con el cliente para análisis de requerimientos"
+            "Migración de registros desde hojas de cálculo a base de datos SQL",
+            "Desarrollo de interfaz gráfica funcional para operaciones CRUD",
+            "Optimización del acceso a información para el equipo administrativo"
         ]
     }
 ];
